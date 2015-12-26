@@ -1,14 +1,12 @@
 # PlaceholderJ
-PaceholderJ is a simple Android library created to help you handle easily with screens of empty list, no itens found, loading and error.
+PlaceholderJ is a simple Android library created to assist you handling placeholders for screens with empty lists, no itens found, loading and errors.
 
 ##Observations
-Before you start is important you keep in mind that PlaceholderJ views are projected to handle with errors 
-received from failures of some request submited to an API and this request must be made by Retrofit becouse the errors expected in this library are retrofit errors.
-In other words if you will pass an error to PlaceholderJ make sure with this error is a RetrofitError.           
+Before you start, it is important to keep in mind that PlaceholderJ views were projected to handle errors generated from Retrofit requests. So, make sure you're passsing only RetrofitErros to PlaceholderJ.
 
-So if you whant to your error view or empty view handle with other errors you are encouraged to implement this and send me a pull request ;).
+Feel free to implement your own error handling for another cases, and please send me a pull to request. :)
 
-### Include this library:
+### How to include this library:
 
 ``` groovy
 allprojects {
@@ -26,7 +24,7 @@ dependencies {
 ```
 ###Quick Start
 -----------
-####Step 1 - You will need some view from PlaceHolderJ in your layout.
+####Step 1 - You will need some views for PlaceHolderJ in your layout.
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -51,7 +49,7 @@ dependencies {
 
 </FrameLayout>
 ```
-As you see you can include a loading view, empty view or error view but is a good practice include only the view that you will use.
+As you see, you can include a loading, empty and error views to your layout, but is good practice to include only the views that you will use.
 
 ####Step 2 - You will need create a instance of PlaceHolderJ in your Activity or Fragment.
 ##### Activity
@@ -85,4 +83,6 @@ public class MainFragment extends Fragment {
     }
 }
 ```
-Note that in placeHolderJ.init() you can pass five parameters but just the Activity or View, first view id and second view id are obligatory. This three parameters are obligatory because you always has to pass the Activity or View that will be used to find the views passed on placeHolderJ.init(). Activity or View also is used to find child view from views like R.id.view_error.
+Note that in placeHolderJ.init() you can pass five parameters but only the Activity or View, the id of the view that will be manipulated to show the placeholders and at least the id of 1 placeholder are mandatory.
+
+Contributor: Daivid Silverio (https://github.com/daividssilverio) - Docs
